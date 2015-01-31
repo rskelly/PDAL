@@ -131,6 +131,10 @@ Options P2gWriter::getDefaultOptions() {
 }
 
 void P2gWriter::write(const PointBuffer& buf) {
+
+	if(!buf.size())
+		return;
+
 	std::string z_name = getOptions().getValueOrDefault<std::string>("Z", "Z");
 
 	for (point_count_t idx = 0; idx < buf.size(); idx++) {
