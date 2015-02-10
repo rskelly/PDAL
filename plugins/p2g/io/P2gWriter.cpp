@@ -133,7 +133,7 @@ Options P2gWriter::getDefaultOptions() {
 void P2gWriter::write(const PointBuffer& buf) {
 
 	if(!buf.size())
-		return;
+		throw p2g_error("Zero-size buffer.");
 
 	std::string z_name = getOptions().getValueOrDefault<std::string>("Z", "Z");
 
